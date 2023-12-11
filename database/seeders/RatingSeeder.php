@@ -19,7 +19,7 @@ class RatingSeeder extends Seeder
     public function run(): void
     {
         // Set jumlah data yang ingin dibuat pada setiap eksekusi
-        $batchSize = 1000;
+        $batchSize = 500;
 
         // Hitung jumlah batch yang diperlukan
         $totalData = 500000;
@@ -39,7 +39,7 @@ class RatingSeeder extends Seeder
         // Loop untuk membuat data secara bertahap
         for ($i = 0; $i < $totalBatches; $i++) {
             // Dapatkan ID buku acak untuk batch saat ini
-            $randomIdsArray = Book::select('id')->inRandomOrder()->pluck('id')->take(1000)->toArray();
+            $randomIdsArray = Book::select('id')->inRandomOrder()->pluck('id')->take(500)->toArray();
 
             // Gunakan metode factory dengan data acak yang sudah dipilih
             foreach ($randomIdsArray as $randomId) {

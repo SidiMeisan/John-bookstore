@@ -22,7 +22,7 @@ class RatingFactory extends Factory
     public function definition(): array
     {
         return [
-            'rating'  => $this->faker->numberBetween(1, 10)
+            'rating'  => $this->faker->numberBetween(2, 8)
         ];
     }
 }

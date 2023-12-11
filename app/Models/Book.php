@@ -29,11 +29,4 @@ class Book extends Model
     {
         return $this->hasMany(Rating::class);
     }
-
-    public function scopeOrderByAverageRating($query, $direction = 'desc')
-    {
-        return $query->leftJoin('ratings', 'books.id', '=', 'ratings.book_id')
-            ->groupBy('books.id')
-            ->orderByRaw('AVG(ratings.rating) ' . $direction);
-    }
 }
