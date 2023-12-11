@@ -6,7 +6,7 @@ A brief description of your project.
 
 Make sure you have the following installed:
 
-- [PHP](https://www.php.net/) (>= 7.4)
+- [PHP](https://www.php.net/) (>= 8.1)
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/) (for frontend assets, if applicable)
 - [Any other prerequisites]
