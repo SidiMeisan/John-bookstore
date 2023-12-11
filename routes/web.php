@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\VoteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/books/filter', [BookController::class, 'index'])->name('books.filter');
+Route::get('/authors/top', [VoteController::class, 'index'])->name('authors.top');
+
+Route::get('/ratings/create', [VoteController::class, 'create'])->name('ratings.create');
+Route::post('/ratings', [BookController::class, 'storeRating'])->name('ratings.simpan');
+
+Route::get('/get-books-by-author', [BookController::class, 'getBooksByAuthor']);
