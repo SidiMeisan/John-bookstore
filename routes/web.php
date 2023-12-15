@@ -16,9 +16,8 @@ use App\Http\Controllers\VoteController;
 |
 */
 
-
-Route::get('/books/filter', [BookController::class, 'index'])->name('books.filter');
-Route::get('/authors/top', [VoteController::class, 'index'])->name('authors.top');
+Route::get('/', [BookController::class, 'index'])->name('books.filter');
+Route::get('/authors', [VoteController::class, 'index'])->name('authors.top');
 
 Route::get('/ratings/create', [VoteController::class, 'create'])->name('ratings.create');
 Route::post('/ratings', [BookController::class, 'storeRating'])->name('ratings.simpan');
